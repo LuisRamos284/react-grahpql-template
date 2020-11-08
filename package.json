@@ -1,0 +1,41 @@
+{
+  "name": "react-grahpql",
+  "version": "1.0.0",
+  "description": "React template with graphql (Apollo-Client) and Postgresql (Docker)",
+  "author": "Luis Ramos",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prettier": "prettier --write '**/*.+(json|ts|tsx|js|jsx)'",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "start:app": "yarn workspace @react-grahpql/app start",
+    "start:hasura": "cd ./hasura && hasura console --admin-secret myadminsecretkey",
+    "start:docker": "docker-compose up -d",
+    "generate:app": "yarn workspace @react-grahpql/app generate"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^7.11.0",
+    "eslint-config-universe": "^3.0.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.1",
+    "prettier": "^2.0.2",
+    "typescript": "^4.0.3"
+  }
+}

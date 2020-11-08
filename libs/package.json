@@ -1,0 +1,9 @@
+{
+  "name": "libs",
+  "version": "1.0.0",
+  "description": "Common libraries",
+  "main": "index.ts",
+  "author": "Luis Ramos",
+  "license": "MIT",
+  "private": true
+}

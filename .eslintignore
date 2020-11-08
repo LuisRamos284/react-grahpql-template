@@ -1,0 +1,5 @@
+.vscode/.react
+node_modules/**/*
+node_modules*
+build*
+__generated__/**/*
