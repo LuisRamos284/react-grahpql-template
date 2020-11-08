@@ -1,0 +1,20 @@
+overwrite: true
+schema:
+  - http://localhost:8080/v1/graphql:
+      headers:
+        x-hasura-admin-secret: myadminsecretkey
+documents: 'src/lib/graphql/**/*.graphql'
+generates:
+  src/lib/graphql/projectGraphql.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+    config:
+      withComponent: false
+      withHOC: false
+      withHooks: true
+      transformUnderscore: true
+hooks:
+  afterAllFileWrite:
+    - prettier --write

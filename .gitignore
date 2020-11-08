@@ -1,6 +1,4 @@
 .vscode/.react
-.graphqlconfig
-codegen.yml
 node_modules/**/*
 __generated__/**/*
 .expo/*
@@ -13,8 +11,7 @@ npm-debug.*
 *.orig.*
 web-build/
 web-report/
-docker/**
-properties.env
+
 #idea
 .idea/**
 
